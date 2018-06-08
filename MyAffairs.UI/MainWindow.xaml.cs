@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyAffairs.Core.Interfaces;
+using MyAffairs.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,33 @@ namespace MyAffairs.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(IStorage storage, User user)
         {
             InitializeComponent();
+        }
+        private void NameOfTheTaskTextBlock_Initialized(object sender, EventArgs e)
+        {
+            
+
+        }
+        private void NewTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+
+        }
+        private void UrgencyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void ImportanceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+          
         }
     }
 }

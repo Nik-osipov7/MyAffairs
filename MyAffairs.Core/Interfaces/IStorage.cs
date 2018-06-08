@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyAffairs.Core.Interfaces
 {
-    interface IStorage
+    public interface IStorage
     {
         IRepository<User> Users { get; }
     }
