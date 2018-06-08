@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyAffairs.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Помошник" MinHeight="350" MinWidth="550" MaxHeight="550" MaxWidth="630" Width="560" Height="370">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Padding="5" Margin="0,0,10,0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">Задачи:</TextBlock>
+        <ListBox Margin="0,0,10,0" Name="TaskListBox"  Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+      
+                            <TextBlock Grid.Column="0" Name="NameOfTheTaskTextBlock" FontSize="15" Width="270" Padding="5" Initialized="NameOfTheTaskTextBlock_Initialized">Название задачи</TextBlock>
+                        
+                        <Button Name="DeleteButton" Grid.Column="2" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" Width="Auto" Click="DeleteButton_Click">
+                            <Image Source="Images/delete_icon.png" Height="15" Width="15"></Image>
+                        </Button>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Name="NewTaskButton" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Padding="3" Margin="20" Click="NewTaskButton_Click">Новая задача</Button>
         
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" MinHeight="50" />
+                <RowDefinition Height="auto" MinHeight="50"  />
+                <RowDefinition Height="auto" MinHeight="50"/>
+            </Grid.RowDefinitions>
+            <ComboBox Grid.Row="0" DisplayMemberPath="Name" Name="ImportanceComboBox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Padding="4" Margin="10,0,10,0" IsEditable="True" FontSize="15" IsReadOnly="True" Text="Все" SelectionChanged="ImportanceComboBox_SelectionChanged" ></ComboBox>
+            <ComboBox Grid.Row="1" Name="UrgencyComboBox" DisplayMemberPath="Name" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Padding="4" Margin="10,0,10,0" IsEditable="True" FontSize="15" IsReadOnly="True" Text="Все" SelectionChanged="UrgencyComboBox_SelectionChanged"></ComboBox>
+            
+        </Grid>
     </Grid>
 </Window>
