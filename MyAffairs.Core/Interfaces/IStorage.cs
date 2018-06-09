@@ -10,5 +10,7 @@ namespace MyAffairs.Core.Interfaces
     public interface IStorage
     {
         IRepository<User> Users { get; }
+        User LogIn(User user);
+        void AddUser(User user);
     }
 }
