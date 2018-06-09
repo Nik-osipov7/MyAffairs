@@ -26,6 +26,7 @@ namespace MyAffairs.UI
         public AuthorizationWindow()
         {
             InitializeComponent();
+            _storage = Factory.Instance.GetDatabaseStorage();
         }
         public AuthorizationWindow(IStorage storage)
         {

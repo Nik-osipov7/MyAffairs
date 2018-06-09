@@ -1,4 +1,5 @@
-﻿using MyAffairs.Core.Interfaces;
+﻿using MyAffairs.Core.DataStorage;
+using MyAffairs.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace MyAffairs.Core
 
 
         private IStorage _storage;
+        public IStorage GetDatabaseStorage() => _storage ?? (_storage = new DatabaseStorage());
 
     }
 }
