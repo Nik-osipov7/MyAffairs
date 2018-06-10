@@ -22,9 +22,20 @@ namespace MyAffairs.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        IStorage _storage;
+        User _user;
         public MainWindow(IStorage storage, User user)
         {
             InitializeComponent();
+            _storage = storage;
+            _user = _storage.LogIn(user);
+            RefreshTaskListBox();
+        }
+        private void RefreshTaskListBox()
+        {
+            TaskListBox.ItemsSource = null;
+            TaskListBox.ItemsSource = _user.Goals;
+
         }
         private void NameOfTheTaskTextBlock_Initialized(object sender, EventArgs e)
         {

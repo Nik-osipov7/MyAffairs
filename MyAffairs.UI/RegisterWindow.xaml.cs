@@ -71,6 +71,8 @@ namespace MyAffairs.UI
                 Email = email,
                 Goals = new List<Goal>()
             };
+            _storage.AddUser(NewUser);
+            _storage.Users.Add(NewUser);
             Close();
         }
 

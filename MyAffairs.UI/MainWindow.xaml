@@ -47,7 +47,7 @@
             </Grid.RowDefinitions>
             <ComboBox Grid.Row="0" DisplayMemberPath="Name" Name="ImportanceComboBox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Padding="4" Margin="10,0,10,0" IsEditable="True" FontSize="15" IsReadOnly="True" Text="Все" SelectionChanged="ImportanceComboBox_SelectionChanged" ></ComboBox>
             <ComboBox Grid.Row="1" Name="UrgencyComboBox" DisplayMemberPath="Name" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Padding="4" Margin="10,0,10,0" IsEditable="True" FontSize="15" IsReadOnly="True" Text="Все" SelectionChanged="UrgencyComboBox_SelectionChanged"></ComboBox>
-            
+            <Button Name="CompletedTasksButton" Grid.Row="2" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Padding="4" Margin="10,0,10,0">Завершенные</Button>
         </Grid>
     </Grid>
 </Window>

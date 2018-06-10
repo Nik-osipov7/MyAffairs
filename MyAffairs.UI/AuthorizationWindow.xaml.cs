@@ -48,10 +48,18 @@ namespace MyAffairs.UI
                 passwordBox.Focus();
                 return;
             }
-            User User = new User();
-            MainWindow window = new MainWindow(_storage, User);
-            window.Show();
-            Close();
+            var User = _storage.Users.Items.FirstOrDefault(u => (
+                u.Email.ToLower() == login.ToLower() & u.Password == password));
+            if (User != null)
+            {
+                MainWindow window = new MainWindow(_storage, User);
+                window.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль!");
+            }
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
