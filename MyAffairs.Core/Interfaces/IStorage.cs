@@ -12,5 +12,8 @@ namespace MyAffairs.Core.Interfaces
         IRepository<User> Users { get; }
         User LogIn(User user);
         void AddUser(User user);
+        void AddGoal(User user, Goal goal);
+        void RemoveGoal(Goal goal);
+        void EditGoal(Goal goal);
     }
 }
