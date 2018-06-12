@@ -17,7 +17,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Padding="5" Margin="0,0,10,0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">Задачи:</TextBlock>
-        <ListBox Margin="0,0,10,0" Name="TaskListBox"  Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Stretch">
+        <ListBox Margin="0,0,10,0" Name="TaskListBox"  Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Stretch" MouseDoubleClick="TaskListBox_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -26,19 +26,19 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-      
+                        <Border Name="DeleteButtonBorder" BorderBrush="White" BorderThickness="5" CornerRadius="10" VerticalAlignment="Top" Initialized="DeleteButtonBorder_Initialized">
                             <TextBlock Grid.Column="0" Name="NameOfTheTaskTextBlock" FontSize="15" Width="270" Padding="5" Initialized="NameOfTheTaskTextBlock_Initialized">Название задачи</TextBlock>
-                        
+                        </Border>
                         <Button Name="DeleteButton" Grid.Column="2" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Height="Auto" Width="Auto" Click="DeleteButton_Click">
                             <Image Source="Images/delete_icon.png" Height="15" Width="15"></Image>
                         </Button>
-                        
+                        <CheckBox Name="CompleteCheckBox" Grid.Column="1" ToolTip="Завершить" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="CompleteCheckBox_Checked" Initialized="CompleteCheckBox_Initialized"></CheckBox>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Name="NewTaskButton" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Padding="3" Margin="20" Click="NewTaskButton_Click">Новая задача</Button>
-        
+        <Button Name="LogOutButton" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Padding="20,3,20,3" Click="LogOutButton_Click">Выйти</Button>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" MinHeight="50" />
@@ -47,7 +47,7 @@
             </Grid.RowDefinitions>
             <ComboBox Grid.Row="0" DisplayMemberPath="Name" Name="ImportanceComboBox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Padding="4" Margin="10,0,10,0" IsEditable="True" FontSize="15" IsReadOnly="True" Text="Все" SelectionChanged="ImportanceComboBox_SelectionChanged" ></ComboBox>
             <ComboBox Grid.Row="1" Name="UrgencyComboBox" DisplayMemberPath="Name" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Padding="4" Margin="10,0,10,0" IsEditable="True" FontSize="15" IsReadOnly="True" Text="Все" SelectionChanged="UrgencyComboBox_SelectionChanged"></ComboBox>
-            <Button Name="CompletedTasksButton" Grid.Row="2" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Padding="4" Margin="10,0,10,0">Завершенные</Button>
+            <Button Name="CompletedTasksButton" Grid.Row="2" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Padding="4" Margin="10,0,10,0" Click="CompletedTasksButton_Click">Завершенные</Button>
         </Grid>
     </Grid>
 </Window>

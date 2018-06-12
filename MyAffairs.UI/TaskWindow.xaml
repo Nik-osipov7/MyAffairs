@@ -1,0 +1,49 @@
+﻿<Window x:Class="MyAffairs.UI.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyAffairs.UI"
+        mc:Ignorable="d"
+        Title="Новая задача" Height="300" Width="300" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="15" HorizontalAlignment="Center" Margin="0,10,0,0">Название</TextBlock>
+            <TextBox Name="NameTextBox" Grid.Row="1" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" TextChanged="NameTextBox_TextChanged"></TextBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="15" HorizontalAlignment="Center" Margin="0,10,0,0" >Описание</TextBlock>
+            <TextBox Name="DescriptionTextBox" Grid.Row="1" Height="90" Margin="10,0,10,10" TextWrapping="Wrap" VerticalAlignment="Center" TextChanged="DescriptionTextBox_TextChanged"></TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Name="ImportanceCheckBox" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Checked="ImportanceCheckBox_Checked" Initialized="ImportanceCheckBox_Initialized" Unchecked="ImportanceCheckBox_Unchecked">Важная</CheckBox>
+            <CheckBox Name="UrgencyCheckBox" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Checked="UrgencyCheckBox_Checked" Initialized="UrgencyCheckBox_Initialized" Unchecked="UrgencyCheckBox_Unchecked">Срочная</CheckBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="ConfirmButton" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Padding="20,3,20,3" Click="ConfirmButton_Click">Создать</Button>
+            <Button Name="CancelButton" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Padding="20,3,20,3" Click="CancelButton_Click">Отмена</Button>
+        </Grid>
+    </Grid>
+</Window>

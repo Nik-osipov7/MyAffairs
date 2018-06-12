@@ -9,6 +9,8 @@ namespace MyAffairs.Core.Interfaces
 {
     public interface IStorage
     {
+        List<ObjectForComboBox> ObjectsForImportanceComboBox { get; }
+        List<ObjectForComboBox> ObjectsForUrgencyComboBox { get; }
         IRepository<User> Users { get; }
         User LogIn(User user);
         void AddUser(User user);
